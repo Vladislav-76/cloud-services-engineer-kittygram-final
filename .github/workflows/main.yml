@@ -23,7 +23,7 @@ jobs:
 
     - name: Test with flake8
       run: |
-        python -m flake8 backend/
+        python -m flake8 backend/ --exclude migrations,settings.py
 
     - name: Test with Pytest
       run: |
