@@ -22,18 +22,19 @@ services:
   # Имя и описание контейнера с бэкендом:
   backend:
     # Из какого Dockerfile собирать образ для этого контейнера:
-    build: ./backend/
+    image: vladislavgs/kittygram_backend:latest
     env_file: .env
     # Какие контейнеры нужно запустить до старта этого контейнера:
     depends_on:
       - postgres
   # Имя третьего контейнера. Это контейнер с фронтендом:
   frontend:
+    image: vladislavgs/kittygram_frontend:latest
     env_file: .env
-    build: ./frontend/
+    # build: ./frontend/
   
   gateway:
-    build: ./nginx/
+    image: vladislavgs/kittygram_gateway:latest
     ports:
       - "80:80"
     volumes:
