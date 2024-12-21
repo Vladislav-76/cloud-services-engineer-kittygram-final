@@ -8,17 +8,19 @@ volumes:
 
 services:
   postgres:
-    image: postgres:13.10
+    image: postgres:13
     environment:
       POSTGRES_DB: kittygram
       POSTGRES_USER: kittygram_user
       POSTGRES_PASSWORD: kittygram_password
+    restart: always
     volumes:
       - pg_data:/var/lib/postgresql/data/
 
   backend:
     image: vladislavgs/kittygram_backend:latest
     env_file: .env
+    restart: always
     depends_on:
       - postgres
     volumes:
@@ -28,11 +30,13 @@ services:
   frontend:
     image: vladislavgs/kittygram_frontend:latest
     env_file: .env
+    restart: always
   
   gateway:
     image: vladislavgs/kittygram_gateway:latest
     ports:
       - "80:80"
+    restart: always
     volumes:
       - static_value:/var/html/static/
       - media_value:/var/html/media/
