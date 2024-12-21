@@ -9,13 +9,13 @@ volumes:
 services:
   postgres:
     image: postgres:13.10
-    env_file: ./.env
+    env_file: .env
     volumes:
-      - pg_data:/var/lib/postgresql/data
+      - pg_data:/var/lib/postgresql/data/
 
   backend:
     image: vladislavgs/kittygram_backend:latest
-    env_file: ./.env
+    env_file: .env
     depends_on:
       - postgres
     volumes:
