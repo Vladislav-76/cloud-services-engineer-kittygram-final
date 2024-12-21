@@ -130,7 +130,7 @@ jobs:
 
   auto_tests:
     runs-on: ubuntu-latest
-
+    needs: deploy
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python
