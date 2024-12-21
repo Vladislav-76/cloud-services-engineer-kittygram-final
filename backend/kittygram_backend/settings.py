@@ -67,7 +67,7 @@ DATABASES = {
         'USER': 'kittygram_user',
         'PASSWORD': 'kittygram_password',
         'POSTGRES_HOST': 'postgres',
-        'POSTGRES_PORT': 5432,
+        'POSTGRES_PORT': '5432',
     }
 }
 
