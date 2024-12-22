@@ -2,8 +2,8 @@ version: '3'
 
 volumes:
   pg_data:
-  static_value:
-  media_value:
+  static:
+  media:
 
 
 services:
@@ -24,8 +24,8 @@ services:
     depends_on:
       - postgres
     volumes:
-      - static_value:/app/static/
-      - media_value:/app/media/    
+      - static:/app/collected_static/
+      - media:/app/media/    
 
   frontend:
     image: vladislavgs/kittygram_frontend:latest
@@ -38,8 +38,8 @@ services:
       - "80:80"
     restart: always
     volumes:
-      - static_value:/var/html/static/
-      - media_value:/var/html/media/
+      - static:/var/html/static/
+      - media:/var/html/media/
     depends_on:
       - backend
       - frontend
