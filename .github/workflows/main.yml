@@ -1,9 +1,9 @@
 name: Workflow for Kittygram
 
-on:
-  push: |
+on: |
+  push:
     branches: [ main ]
-    workflow_dispatch
+  workflow_dispatch
 
 jobs:
   tests:
