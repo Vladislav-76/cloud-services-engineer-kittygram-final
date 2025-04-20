@@ -1,7 +1,6 @@
 name: Workflow for Kittygram
 
 on:
-  workflow_dispatch
   push:
     branches: [ main ]
 
