@@ -2,8 +2,7 @@ name: Workflow for Kittygram
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   tests:
