@@ -38,13 +38,13 @@ variable "ssh_key" {
   type        = string
 }
 
-variable "cloud_id" {
+variable "yc_cloud_id" {
   description = "Cloud ID"
   default     = "b1g6fpliqlh4kbhl2pv4"
   type        = string
 }
 
-variable "folder_id" {
+variable "yc_folder_id" {
   description = "Folder ID"
   default     = "b1gbcm70lghdf6mdptvq"
   type        = string
