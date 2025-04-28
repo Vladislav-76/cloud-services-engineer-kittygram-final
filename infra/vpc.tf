@@ -1,7 +1,3 @@
-# ===============
-# VPC Resources
-# ===============
-
 resource "yandex_vpc_network" "infra_network" {
   name = var.vpc_name
 }

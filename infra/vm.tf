@@ -1,7 +1,3 @@
-# ==================================
-# Virtual Machine Configuration
-# ==================================
-
 data "yandex_compute_image" "image" {
   family = var.image_family
 } 
@@ -35,6 +31,7 @@ resource "yandex_compute_instance" "vm_1" {
     serial-port-enable = "1"
     user-data = templatefile("${path.module}/init/vm-install.yml", 
     {
+      USER = var.user
       SSH_KEY = var.ssh_key
     })
   }

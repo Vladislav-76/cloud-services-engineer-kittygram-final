@@ -1,7 +1,3 @@
-# ===============
-# Variables
-# ===============
-
 variable "vpc_name" {
   description = "VPC Name"
   type        = string
@@ -18,8 +14,6 @@ variable "net_cidr" {
 
   default = [
     { name = "infra-subnet-a", zone = "ru-central1-a", prefix = "10.129.1.0/24" },
-    # { name = "infra-subnet-b", zone = "ru-central1-b", prefix = "10.130.1.0/24" },
-    # { name = "infra-subnet-d", zone = "ru-central1-d", prefix = "10.131.1.0/24" },
   ]
 }
 
@@ -28,10 +22,10 @@ variable "vm_1_name" {
   default = "vm-kittygram"
 }
 
-# variable "aws_region" {
-#   description = "AWS Region name"
-#   type = string
-# }
+variable "vm_user" {
+  description = "VM user"
+  type = string
+}
 
 variable "ssh_key" {
   description = "SSH Public Key"
