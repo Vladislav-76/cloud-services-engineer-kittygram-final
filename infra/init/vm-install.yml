@@ -12,11 +12,13 @@ write_files:
     permissions: "0744"
     content: |
       #!/bin/bash
+      set -e
       apt-get update
-      apt-get install -y docker.io docker-compose
-      usermod -aG docker user
+      apt-get install -y docker.io
+      systemctl enable docker
+      systemctl start docker
+      usermod -aG docker ${USER}
 
 runcmd:
   - sleep 120
-  - sudo -i
-  - /root/vm_require.sh
+  - sudo /root/vm_require.sh
