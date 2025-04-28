@@ -8,8 +8,8 @@ users:
     - "${SSH_KEY}"
 
 write_files:
-  - path: "/root/vm_prep.sh"
-    permissions: "0740"
+  - path: "/root/vm_require.sh"
+    permissions: "0744"
     content: |
       #!/bin/bash
       apt-get update
@@ -19,4 +19,4 @@ write_files:
 runcmd:
   - sleep 120
   - sudo -i
-  - /root/vm_prep.sh
+  - /root/vm_require.sh
