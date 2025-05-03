@@ -147,8 +147,7 @@ jobs:
             sh -c 'until nc -z $POSTGRES_HOST $POSTGRES_PORT; do echo "Waiting for postgres..."; sleep 2; done'
           sudo docker compose -f docker-compose.production.yml exec backend python manage.py migrate
           sudo docker compose -f docker-compose.production.yml exec backend python manage.py collectstatic
-          sudo docker compose -f docker-compose.production.yml exec backend cp -r /app/collected_static/. /static/
-          sudo docker compose -f docker-compose.production.yml exec backend python manage.py runserver 0.0.0.0:9000
+          sudo docker compose -f docker-compose.production.yml exec backend cp -rf /app/collected_static/. /static/
 
   auto_tests:
     runs-on: ubuntu-latest
