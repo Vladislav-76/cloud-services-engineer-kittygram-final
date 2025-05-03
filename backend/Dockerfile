@@ -6,4 +6,4 @@ RUN apt-get update && apt-get install -y netcat-openbsd \
 COPY requirements.txt .
 RUN pip install -r requirements.txt --no-cache-dir
 COPY . .
-CMD ["python", "manage.py", "runserver", "0.0.0.0:9000"]
+# CMD ["python", "manage.py", "runserver", "0.0.0.0:9000"]
